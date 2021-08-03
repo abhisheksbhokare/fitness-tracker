@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 mt-5 justify-content-center">
+            <mat-card>
+                <mat-card-title>
+                    Time to start a workout!
+                </mat-card-title>
+                <mat-card-content class="mt-5">
+                    <mat-form-field>
+                        <mat-label>Select workout</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let ex of exercises" [value]="ex.value">
+                                {{ex.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-card-content>
+                <mat-card-actions class="mt-5">
+                    <button mat-raised-button color="primary" (click)="startTraining()" type="submit">Start</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>

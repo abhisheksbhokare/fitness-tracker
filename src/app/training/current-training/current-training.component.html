@@ -1,0 +1,9 @@
+<div class=" justify-content-center mt-5">
+    <mat-progress-spinner style="margin:auto" mode="determinate" [value]="progressVal"></mat-progress-spinner>
+    <div class="mt-5">
+        <h1>{{progressVal}}%</h1>
+    </div>
+    <div class="col-md-12">
+        <button class="mt-5" type="submit" mat-raised-button color="accent" (click)="startTimer($event)">{{buttonVal}}</button>
+    </div>
+</div>

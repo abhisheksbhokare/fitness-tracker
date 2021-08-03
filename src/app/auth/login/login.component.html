@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <br><br>
+            <section>
+                <form #formid="ngForm" (ngSubmit)="onSubmit(formid)">
+                    <mat-form-field>
+                        <mat-label>Your Email</mat-label>
+                        <input type="email" placeholder="Your Email" ngModel name="email" matInput email required
+                            #emailInput="ngModel">
+                        <mat-error *ngIf="emailInput.hasError('required')">Email cannot be empty</mat-error>
+                        <mat-error *ngIf="emailInput.hasError('email')">Not a valid email address</mat-error>
+                    </mat-form-field>
+                    <mat-form-field hintLabel="Please Enter Your Password">
+                        <mat-label>Password</mat-label>
+                        <input type="password" placeholder="Your Password" ngModel name="password" matInput required
+                            minlength="6" #pw="ngModel">
+                        <mat-error>Password should be at least 6 characters long</mat-error>
+                        <mat-hint align="end">{{pw.value?.length }} / 6</mat-hint>
+                    </mat-form-field>
+
+                    <div class="d-flex justify-content-center">
+                        <button [disabled]="formid.invalid" mat-raised-button color="primary">Submit</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
