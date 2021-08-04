@@ -7,14 +7,14 @@
         <mat-icon>input</mat-icon>
         <span class="caption">Login</span>
     </a>
-    <a mat-list-item routerLink="/training" (click)="closeSidebar()">
+    <a *ngIf="showThisRoute" mat-list-item routerLink="/training" (click)="closeSidebar()">
         <mat-icon>fitness_center</mat-icon>
         <span class="caption">Training</span>
     </a>
-    <mat-list-item>
+    <mat-list-item *ngIf="showThisRoute">
         <button mat-icon-button>
             <mat-icon>eject</mat-icon>
-            <span class="caption">Logout</span>
+            <span (click)="logoutUser()" class="caption">Logout</span>
         </button>
     </mat-list-item>
 </mat-nav-list>

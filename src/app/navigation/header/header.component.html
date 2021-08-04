@@ -9,8 +9,8 @@
     <div class="col-10 navbarClass">
         <a routerLink="/signup">Sign up</a>
         <a routerLink="/login">Login</a>
-        <a routerLink="/training">Training</a>
-        <a>Logout</a>
+        <a *ngIf="showThisRoute" routerLink="/training">Training</a>
+        <a *ngIf="showThisRoute" style="cursor: pointer;" (click)="logoutUser()">Logout</a>
     </div>
 </div>
 </mat-toolbar>
